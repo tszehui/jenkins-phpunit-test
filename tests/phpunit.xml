@@ -10,8 +10,4 @@
 			<directory>.</directory>
 		</testsuite>
 	</testsuites>
-	<logging>
-        <log type="junit" target="logs/unitreport.xml"/>
-    </logging>
 </phpunit>
-
