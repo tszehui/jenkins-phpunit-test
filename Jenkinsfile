@@ -1,6 +1,6 @@
 pipeline {
 	agent {
-		any {
+		docker {
 			image 'composer:latest'
 		}
 	}
@@ -12,7 +12,9 @@ pipeline {
 		}
 		stage('Test') {
 			steps {
+                sh 'mkdir -p logs'
                 sh './vendor/bin/phpunit --log-junit logs/unitreport.xml -c tests/phpunit.xml tests'
+                sh 'ls -l logs'
             }
 		}
 	}
